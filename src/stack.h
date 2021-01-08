@@ -10,6 +10,7 @@
  * 
  * when you push something to the stack, you're adding it to the top
  * when you pop something from the stack, you're taking it from the top
+ * when you peek something from the stack, you're popping it without actually removing it
  */
 
 /* stack */

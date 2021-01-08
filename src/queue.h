@@ -10,6 +10,7 @@
  * 
  * when you push something to the stack, you're adding it to the to the back
  * when you pop something from the stack, you're taking it from the front
+ * when you peek something from the queue, you're popping it without actually removing it
  */
 
 /* queue */
