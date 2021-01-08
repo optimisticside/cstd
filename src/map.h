@@ -3,6 +3,16 @@
 
 #include "list.h"
 
+/*
+ * a hash map is a very powerful data-structure
+ * it's also known as an associative array
+ * 
+ * hashmaps are split into buckets
+ * each bucket consists of a linked list of elements
+ * each element has a key, value, and unique hash
+ * the hash is used to determine the node's bucket
+ */
+
 /* hash map node */
 struct mapnode {
     void *data;     /* the node's data */
