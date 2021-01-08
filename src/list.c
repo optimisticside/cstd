@@ -41,6 +41,7 @@ void *list_get(struct list *list, size_t idx) {
     struct listnode *curr = list->head;
     size_t pos = 0;
 
+    /* go through the list */
     while (curr) {
         /* check if we're at our destination */
         if (pos == idx) {
@@ -61,6 +62,7 @@ void list_delete(struct list *list, size_t idx) {
     struct listnode *curr = prev;
     size_t pos = 0;
 
+    /* go through the list */
     while (curr) {
         /* check if we're at the right position */
         if (pos == idx) {
