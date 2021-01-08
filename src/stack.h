@@ -3,6 +3,15 @@
 
 #include <stddef.h>
 
+/*
+ * stacks are a LIFO data-structure
+ * this means that the last thing in is the first thing out
+ * it's comparable to a physical stack of books
+ * 
+ * when you push something to the stack, you're adding it to the top
+ * when you pop something from the stack, you're taking it from the top
+ */
+
 /* stack */
 struct stack {
     void **buffer;      /* pointer to the data */

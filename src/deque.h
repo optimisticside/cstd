@@ -3,6 +3,11 @@
 
 #include <stddef.h>
 
+/*
+ * dequeues allow operations on both the front and the back it
+ * this means that they can be used as a queue or a stack
+ */
+
 /* deque */
 struct deque {
     void **buffer;      /* pointer to the data */

@@ -3,6 +3,15 @@
 
 #include <stddef.h>
 
+/*
+ * queues are a FIFO data-structure
+ * this means that the first thing in is the first thing out
+ * it's comparable to a physical line of people waiting
+ * 
+ * when you push something to the stack, you're adding it to the to the back
+ * when you pop something from the stack, you're taking it from the front
+ */
+
 /* queue */
 struct queue {
     void **buffer;      /* pointer to the data */

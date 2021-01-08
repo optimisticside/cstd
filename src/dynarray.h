@@ -3,6 +3,15 @@
 
 #include <stddef.h>
 
+/*
+ * dynamic arrays are a very useful data-structure
+ * they allow you to store data without having to worry about size
+ * whenever you want to add an element and there's not enough space, their data is reallocated
+ * 
+ * unfortunately, this also means a lot of allocations on the heap
+ * they should be avoided where arrays are applicable
+ */
+
 /* dynamic array */
 struct dynarray {
     void **buffer;      /* pointer to the data */
