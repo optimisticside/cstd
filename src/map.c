@@ -60,7 +60,33 @@ void map_set(struct hashmap *map, void *key, void *data) {
 
 /* removes a node from a map by it's index */
 void map_remove(struct hashmap *map, void *key) {
-    
+    /* determine the key's bucket */
+    size_t hash = map->hasher(key);
+    struct mapbucket *bucket = &map->buckets[hash % map->bucket_count];
+
+    /* keep track of location */
+    struct listnode *prev = bucket->nodes->head;
+    struct listnode *curr = prev;
+
+    /* go through bucket */
+    while (curr) {
+        /* get current node */
+        struct mapnode *node = (struct mapnode *)curr->data;
+
+        /* check location */
+        if (node->key == key) {
+            /* unlink node */
+            prev->next = curr->next;
+
+            /* deallocate bucket and list node */
+            free(node);
+            free(curr);
+        }
+
+        /* update location */
+        prev = curr;
+        curr = curr->next;
+    }
 }
 
 /* gets a node's value from it's index */
