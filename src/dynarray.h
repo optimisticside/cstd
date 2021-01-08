@@ -2,7 +2,6 @@
 #define DYNARRAY_H
 
 #include <stddef.h>
-#include <stdlib.h>
 
 /* dynamic array */
 struct dynarray {
