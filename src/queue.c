@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "queue.h"
 
 /* adds data to the end of the queue */

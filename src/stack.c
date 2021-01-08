@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "stack.h"
 
 /* adds an element to the end of the stack */

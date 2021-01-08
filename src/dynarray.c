@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "dynarray.h"
 
 void dynarray_resize(struct dynarray *array) {
