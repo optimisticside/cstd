@@ -7,3 +7,4 @@ It currently contains the following modules:
  - queue - An implementation of a queue (FIFO), comparable to C++'s queue
  - stack - An implementation of a stack (LIFO), comparable to C++'s stack
  - deque - An implemeentation of a data-structure with the ability to perform operations on the front and back, comparable to C++'s deque
+ - map - An implementation of a hashmap, comparable to C++'s map
