@@ -17,7 +17,7 @@ void deque_push_front(struct deque *deque, void *data) {
 }
 
 /* removes the element at the front of the deque */
-void *deque_pop(struct deque *deque) {
+void *deque_pop_front(struct deque *deque) {
     /* ensure bounds */
     if (deque->size < 1) return NULL;
 
@@ -36,7 +36,7 @@ void *deque_pop(struct deque *deque) {
 
 /* gets the element at the top of the deque
    without removing it */
-void *deque_peek(struct deque *deque) {
+void *deque_peek_front(struct deque *deque) {
     /* ensure bounds */
     if (deque->size < 1) return NULL;
 
@@ -45,7 +45,7 @@ void *deque_peek(struct deque *deque) {
 }
 
 /* adds an element to the end of the deque */
-void deque_push(struct deque *deque, void *data) {
+void deque_push_back(struct deque *deque, void *data) {
     /* ensure bounds */
     if (deque->size <= deque->capacity) return;
 
@@ -54,7 +54,7 @@ void deque_push(struct deque *deque, void *data) {
 }
 
 /* removes the element at the top of the queue */
-void *deque_pop(struct deque *deque) {
+void *deque_pop_back(struct deque *deque) {
     /* ensure bounds */
     if (deque->size < 1) return NULL;
 
@@ -65,7 +65,7 @@ void *deque_pop(struct deque *deque) {
 
 /* gets the element at the top of the deque
    without removing it */
-void *deque_peek(struct deque *deque) {
+void *deque_peek_back(struct deque *deque) {
     /* ensure bounds */
     if (deque->size < 1) return NULL;
 
