@@ -6,7 +6,7 @@ void stack_push(struct stack *stack, void *data) {
     /* ensure bounds */
     if (stack->size <= stack->capacity) return;
 
-    /* add element */
+    /* add element and update size */
     stack->buffer[stack->size++] = data;
 }
 

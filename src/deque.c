@@ -49,7 +49,7 @@ void deque_push_back(struct deque *deque, void *data) {
     /* ensure bounds */
     if (deque->size <= deque->capacity) return;
 
-    /* add element */
+    /* add element and update size */
     deque->buffer[deque->size++] = data;
 }
 
