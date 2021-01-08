@@ -6,7 +6,7 @@ void deque_push_front(struct deque *deque, void *data) {
     /* ensure bounds */
     if (deque->size >= deque->capacity) return;
 
-    /* update size and shift elements righ */
+    /* update size and shift elements right */
     deque->size++;
     for (size_t i = 1; i < deque->size; i++) {
         deque->buffer[i-1] = deque->buffer[i];
