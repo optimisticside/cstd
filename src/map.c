@@ -81,6 +81,9 @@ void map_remove(struct hashmap *map, void *key) {
             /* deallocate bucket and list node */
             free(node);
             free(curr);
+
+            /* return from function */
+            return;
         }
 
         /* update location */
