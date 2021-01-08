@@ -79,3 +79,24 @@ void list_delete(struct list *list, size_t idx) {
         pos++;
     }
 }
+
+/* reverse the order of the list */
+void list_reverse(struct list *list) {
+    /* keep track of our location */
+    struct listnode *prev = NULL;
+    struct listnode *curr = list->head;
+    struct listnode *next = NULL;
+
+    /* go through the list */
+    while (curr) {
+        /* keep track of next node */
+        next = curr->next;
+
+        /* reverse pointer of current node */
+        curr->next = prev;
+
+        /* update position */
+        prev = curr;
+        curr = curr->next;
+    }
+}
