@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "dynarray.h"
 
+/* resizes the array to fit another element */
 void dynarray_resize(struct dynarray *array) {
     /* return if large enough */
     if (array->size + 1 < array->capacity) return;
