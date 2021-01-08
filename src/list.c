@@ -35,6 +35,25 @@ void list_add(struct list *list, void *data) {
     curr->next = list_create_node(data);
 }
 
+/* gets an element from the list */
+void *list_get(struct list *list, size_t idx) {
+    /* keep track of location and position */
+    struct listnode *curr = list->head;
+    size_t pos = 0;
+
+    while (curr) {
+        /* check if we're at our destination */
+        if (pos == idx) {
+            /* return the node's value */
+            return curr->data;
+        }
+
+        /* update position */
+        curr = curr->next;
+        pos++;
+    }
+}
+
 /* deletes an element from the list */
 void list_delete(struct list *list, size_t idx) {
     /* keep track of our location and position */

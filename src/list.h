@@ -16,6 +16,7 @@ struct list {
 
 struct listnode *list_create_node(void *data);
 void list_add(struct list *list, void *data);
+void *list_get(struct list *list, size_t idx);
 void list_delete(struct list *list, size_t idx);
 
 #endif /* LIST_H */
