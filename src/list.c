@@ -97,6 +97,6 @@ void list_reverse(struct list *list) {
 
         /* update position */
         prev = curr;
-        curr = curr->next;
+        curr = next;
     }
 }
