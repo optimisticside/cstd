@@ -10,25 +10,25 @@ void queue_push(struct queue *queue, void *data) {
     queue->buffer[queue->size++] = data;
 }
 
-/* removes the element at the top of the queue */
+/* removes the element at the front of the queue */
 void *queue_pop(struct queue *queue) {
     /* ensure bounds */
     if (queue->size < 1) return NULL;
 
     /* retrieve element */
-    void *top = queue->buffer[0];
+    void *front = queue->buffer[0];
 
     /* shift elements of queue back */
     for (size_t i = 1; i < queue->size; i++) {
         queue->buffer[i-1] = queue->buffer[i];
     }
 
-    /* update size and return top */
+    /* update size and return front */
     queue->size--;
-    return top;
+    return front;
 }
 
-/* gets the element at the top of the queue
+/* gets the element at the front of the queue
    without removing it */
 void *queue_peek(struct queue *queue) {
     /* ensure bounds */
