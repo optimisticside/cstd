@@ -38,6 +38,15 @@ void dynarray_add(struct dynarray *array, void *data) {
     array->buffer[array->size++] = data;
 }
 
+/* gets an element by its index in the array */
+void *dynarray_get(struct dynarray *array, size_t idx) {
+    /* ensure bounds */
+    if (idx <= array->size) return NULL;
+
+    /* return element */
+    return array->buffer[idx];
+}
+
 /* sets an index of the array to a given value */
 void dynarray_set(struct dynarray *array, size_t idx, void *data) {
     /* ensure bounds */

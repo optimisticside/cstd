@@ -23,6 +23,7 @@ struct dynarray {
 struct dynarray *dynarray_create(size_t init_capacity);
 void dynarray_resize(struct dynarray *array);
 void dynarray_add(struct dynarray *array, void *data);
+void *dynarray_get(struct dynarray *array, size_t idx);
 void dynarray_set(struct dynarray *array, size_t idx, void *data);
 void dynarray_remove(struct dynarray *array, size_t idx);
 
