@@ -19,7 +19,7 @@ struct dynarray *dynarray_create(size_t init_capacity) {
 /* resizes the array to fit another element */
 void dynarray_resize(struct dynarray *array) {
     /* return if large enough */
-    if (array->size + 1 < array->capacity) return;
+    if (array->size <= array->capacity) return;
 
     /* caluclate size and reallocate buffer */
     size_t new_capacity = array->capacity * array->alpha;
