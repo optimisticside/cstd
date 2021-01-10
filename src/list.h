@@ -21,6 +21,7 @@ struct listnode {
 /* linked list */
 struct list {
     struct listnode *head;  /* first node in list */
+    struct listnode *tail;  /* last node in list */
 };
 
 struct listnode *list_create_node(void *data);

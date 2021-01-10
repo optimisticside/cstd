@@ -16,23 +16,23 @@ struct listnode *list_create_node(void *data) {
 
 /* adds an element to the end of the list */
 void list_add(struct list *list, void *data) {
-    /* keep track of current node */
-    struct listnode *curr;
+    /* create and initialize node */
+    struct listnode *node = list_create_node(data);
+    node->data = data;
+    node->next = list->tail;
 
-    /* create head if it doesn't exist */
+    /* point tail to node */
+    if (list->tail) {
+        list->tail->next = node;
+    }
+
+    /* update tail of list */
+    list->tail = node;
+
+    /* update head of tail if nonexistant */
     if (!list->head) {
-        list->head = list_create_node(data);
-        return;
+        list->head = node;
     }
-
-    /* go through list and get tail */
-    curr = list->head;
-    while (curr->next) {
-        curr = curr->next;
-    }
-
-    /* update tail of list to point to new node */
-    curr->next = list_create_node(data);
 }
 
 /* gets an element from the list */
