@@ -1,6 +1,19 @@
 #include <stdlib.h>
 #include "list.h"
 
+/* creates a new list */
+struct list *list_create() {
+    /* allocate list */
+    struct list *list = (struct list *)malloc(sizeof(struct list));
+
+    /* initialize members */
+    list->head = NULL;
+    list->tail = NULL;
+
+    /* return list */
+    return list;
+}
+
 /* creates a node */
 struct listnode *list_create_node(void *data) {
     /* allocate node */
