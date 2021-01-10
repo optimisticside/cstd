@@ -1,6 +1,20 @@
 #include <stdlib.h>
 #include "deque.h"
 
+/* creates a new deque */
+struct deque *deque_create(size_t capacity) {
+    /* allocate deque */
+    struct deque *deque = (struct deque *)malloc(sizeof(struct deque));
+
+    /* initialize memvers */
+    deque->buffer = (void **)calloc(capacity, sizeof(void *));
+    deque->capacity = capacity;
+    deque->size = 0;
+
+    /* return deque */
+    return deque;
+}
+
 /* adds an element to the front of the deque */
 void deque_push_front(struct deque *deque, void *data) {
     /* ensure bounds */

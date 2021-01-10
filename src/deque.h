@@ -15,6 +15,8 @@ struct deque {
     size_t size;        /* size of the deque */
 };
 
+struct deque *deque_create(size_t capacity);
+
 void deque_push_front(struct deque *deque, void *data);
 void *deque_pop_front(struct deque *deque);
 void *deque_peek_front(struct deque *deque);
