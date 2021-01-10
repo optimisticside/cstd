@@ -13,17 +13,17 @@ size_t bitmap_mask(size_t entry) {
     return 1 << (entry % 8);
 }
 
-/* gets a git from the bitmap */
-int bitmap_get(bitmap_t *bitmap, size_t entry) {
+/* gets a bit from the bitmap */
+int bitmap_get(bitmap_t bitmap, size_t entry) {
     return (bitmap[bitmap_index(entry)] & bitmap_mask(entry)) != 0;
 }
 
 /* sets a bit in the bitmap */
-void bitmap_set(bitmap_t *bitmap, size_t entry) {
+void bitmap_set(bitmap_t bitmap, size_t entry) {
     bitmap[bitmap_index(entry)] |= bitmap_mask(entry);
 }
 
 /* unsets a bit in teh bitmap */
-void bitmap_clear(bitmap_t *bitmap, size_t entry) {
-    bitmap[bitmap_index(entr)] &= ~bitmap_mask(entry);
+void bitmap_clear(bitmap_t bitmap, size_t entry) {
+    bitmap[bitmap_index(entry)] &= ~bitmap_mask(entry);
 }
