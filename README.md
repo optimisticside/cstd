@@ -8,3 +8,4 @@ It currently contains the following modules:
  - stack - An implementation of a stack (LIFO), comparable to C++'s stack
  - deque - An implemeentation of a data-structure with the ability to perform operations on the front and back, comparable to C++'s deque
  - map - An implementation of a hashmap, comparable to C++'s map
+ - bitmap - An implementation of an array of booleans/bits with the ability to store eight in one byte with masking, comparable to C++'s bitset
