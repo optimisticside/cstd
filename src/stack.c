@@ -1,6 +1,20 @@
 #include <stdlib.h>
 #include "stack.h"
 
+/* creates a new stack */
+struct stack *stack_create(size_t capacity) {
+    /* allocate stack */
+    struct stack *stack = (struct stack *)malloc(sizeof(struct stack));
+
+    /* initialize memvers */
+    stack->buffer = (void **)calloc(capacity, sizeof(void *));
+    stack->capacity = capacity;
+    stack->size = 0;
+
+    /* return stack */
+    return stack;
+}
+
 /* adds an element to the end of the stack */
 void stack_push(struct stack *stack, void *data) {
     /* ensure bounds */
