@@ -1,6 +1,12 @@
 #include <stdlib.h>
 #include "bitmap.h"
 
+/* creates a new bitmap */
+bitmap_t bitmap_create(size_t entry_count) {
+    /* allocate and return bitmap */
+    return (bitmap_t)calloc(entry_count / 8, sizeof(char));
+}
+
 /* gets the index in the bitmap array
    in which a bit would lie */
 size_t bitmap_index(size_t entry) {

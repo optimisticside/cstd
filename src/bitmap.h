@@ -14,6 +14,7 @@
 /* bitmap type */
 typedef char *bitmap_t;
 
+bitmap_t bitmap_create(size_t entry_count);
 size_t bitmap_index(size_t entry);
 size_t bitmap_mask(size_t entry);
 int bitmap_get(bitmap_t bitmap, size_t entry);
