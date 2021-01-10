@@ -3,6 +3,14 @@
 
 #include <stddef.h>
 
+/*
+ * a bitmap is essentially an array of booleans
+ * it allows eight booleans to be fitted into one byte
+ * this allows for more effecient use of memory
+ * 
+ * you can get and change individual bits
+ */
+
 /* bitmap type */
 typedef char *bitmap_t;
 
