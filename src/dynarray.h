@@ -20,6 +20,7 @@ struct dynarray {
     size_t alpha;       /* how to calculate new size (new_size = old_size * alpha) */
 };
 
+struct dynarray *dynarray_create(size_t init_capacity);
 void dynarray_resize(struct dynarray *array);
 void dynarray_add(struct dynarray *array, void *data);
 void dynarray_set(struct dynarray *array, size_t idx, void *data);

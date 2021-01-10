@@ -1,6 +1,20 @@
 #include <stdlib.h>
 #include "dynarray.h"
 
+/* creates a new array */
+struct dynarray *dynarray_create(size_t init_capacity) {
+    /* allocate array */
+    struct dynarray *array = (struct dynarray *)malloc(sizeof(struct dynarray));
+
+    /* initialize members */
+    array->buffer = (void **)calloc(init_capacity, sizeof(void *));
+    array->size = 0;
+    array->capacity = init_capacity;
+
+    /* return array */
+    return array;
+}
+
 /* resizes the array to fit another element */
 void dynarray_resize(struct dynarray *array) {
     /* return if large enough */
