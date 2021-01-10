@@ -20,7 +20,7 @@ struct stack {
     size_t size;        /* size of the stack */
 };
 
-struct stack *stack_create(size_t init_capacity);
+struct stack *stack_create(size_t capacity);
 void stack_push(struct stack *stack, void *data);
 void *stack_pop(struct stack *stack);
 void *stack_peek(struct stack *stack);
