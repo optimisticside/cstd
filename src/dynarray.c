@@ -9,6 +9,7 @@ struct dynarray *dynarray_create(size_t init_capacity) {
     /* initialize members */
     array->buffer = (void **)calloc(init_capacity, sizeof(void *));
     array->size = 0;
+    array->alpha = 2;
     array->capacity = init_capacity;
 
     /* return array */
