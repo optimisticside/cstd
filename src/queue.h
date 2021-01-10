@@ -20,6 +20,7 @@ struct queue {
     size_t size;        /* size of the queue */
 };
 
+struct queue *queue_create(size_t capacity);
 void queue_push(struct queue *queue, void *data);
 void *queue_pop(struct queue *queue);
 void *queue_peek(struct queue *queue);

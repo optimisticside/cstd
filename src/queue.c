@@ -1,6 +1,20 @@
 #include <stdlib.h>
 #include "queue.h"
 
+/* creates a new queue */
+struct queue *queue_create(size_t capacity) {
+    /* allocate queue */
+    struct queue *queue = (struct queue *)malloc(sizeof(struct queue));
+
+    /* initialize memvers */
+    queue->buffer = (void **)calloc(capacity, sizeof(void *));
+    queue->capacity = capacity;
+    queue->size = 0;
+
+    /* return queue */
+    return queue;
+}
+
 /* adds data to the end of the queue */
 void queue_push(struct queue *queue, void *data) {
     /* ensure bounds */
