@@ -32,6 +32,7 @@ struct hashmap {
     size_t (*hasher)(void *);   /* hasher function */
 };
 
+struct hashmap *hashmap_create(size_t bucket_count, size_t(*hasher)(void *));
 struct mapnode *map_add(struct hashmap *map, void *key, void *data);
 struct mapnode *map_find(struct hashmap *map, void *key);
 void map_set(struct hashmap *map, void *key, void *data);

@@ -1,6 +1,27 @@
 #include <stdlib.h>
 #include "map.h"
 
+/* creates a new hashmap */
+struct hashmap *map_create(size_t bucket_count, size_t (*hasher)(void *)) {
+    /* allocate hashmap */
+    struct hashmap *map = (struct hashmap *)malloc(sizeof(struct hashmap));
+
+    /* allocate buckets */
+    map->buckets = (struct mapbucket *)calloc(bucket_count, sizeof(struct mapbucket));
+
+    /* initialize bucket lists */
+    for (size_t i = 0; i < bucket_count; i++) {
+        map->buckets[i].nodes = list_create();
+    }
+
+    /* initialize fields */
+    map->bucket_count = bucket_count;
+    map->hasher = hasher;
+
+    /* return hashmap */
+    return map;
+}
+
 /* adds a node to a hashmap */
 struct mapnode *map_add(struct hashmap *map, void *key, void *data) {
     /* allocate node */
