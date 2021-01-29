@@ -108,6 +108,12 @@ void list_reverse(struct list *list) {
         /* reverse pointer of current node */
         curr->next = prev;
 
+        /* check if at end */
+        if (!next) {
+            /* update head of list */
+            list->head = curr;
+        }
+
         /* update position */
         prev = curr;
         curr = next;
