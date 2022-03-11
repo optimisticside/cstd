@@ -66,6 +66,9 @@ void *list_get(struct list *list, size_t idx) {
         curr = curr->next;
         pos++;
     }
+
+    /* nothing was found, so return null */
+    return NULL;
 }
 
 /* deletes an element from the list */

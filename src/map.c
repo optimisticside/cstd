@@ -33,7 +33,7 @@ struct mapnode *map_add(struct hashmap *map, void *key, void *data) {
     node->hash = map->hasher(key);
 
     /* insert into node */
-    struct mapbucket *bucket = node->hash % map->bucket_count;
+    struct mapbucket *bucket = &map->buckets[node->hash % map->bucket_count];
     list_add(bucket->nodes, node);
 
     /* return node */
